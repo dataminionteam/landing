@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQs | DATAMINION</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <style>
     @font-face {
       font-family: "Public Sans";
@@ -19,34 +19,29 @@
 <body>
   <div id="root">
     <div class="flex flex-col sm:flex-row justify-between w-full h-24 p-4 sm:py-6"><a class="h-12 w-72 max-w-full"
-        href="/"><img
-          src="../assets/minion.svg"
-          class="m-2"></a></div>
+        href="/">
+    <img
+      src="../assets/minion.svg"
+      class="m-2"></a></div>
     <p class="text-3xl md:text-5xl font-bold p-8 md:px-16 font-publicSans">Frequently Asked Questions</p>
-    <div class="min-h-[calc(100vh-18rem)] w-full pb-4 px-8 md:px-16 font-publicSans">
+    <div id="main" class="min-h-[calc(100vh-18rem)] w-full pb-4 px-8 md:px-16 font-publicSans">
       <!-- Search bar -->
-      <div class="flex justify-end h-[4rem] relative">
+      <span class="flex justify-end h-[4rem] relative">
           <input
             oninput="handleInput(event)"
             class="toggle-search hidden w-full h-10 text-base px-10 bg-white border border-slate"
             placeholder="Looking for something?"
             value="">
-          <img
-            onclick="document.querySelectorAll('.toggle-search').forEach(e => {
-              e.classList.toggle('hidden')
-            })"
+          <img id="search-open"
             class="toggle-search h-10 p-1 cursor-pointer"
             src="../assets/search.svg">
-          <img
-            onclick="document.querySelectorAll('.toggle-search').forEach(e => {
-              e.classList.toggle('hidden')
-            }); resetQuery()"
+          <img id="search-close"
             class="toggle-search hidden absolute right-0 h-10 cursor-pointer"
             src="../assets/close.svg">
           <img
             class="toggle-search hidden absolute left-0 h-10 p-1"
             src="../assets/search.svg">
-      </div>
+      </span>
       <!-- Search label -->
       <nav id="search-label" class="hidden flex flex-col xs:flex-row gap-4 items-start"><p>Showing results for: <b id="search-query">as</b></p></nav>
       <!-- Search fail -->
@@ -57,230 +52,8 @@
       </nav>
       <!-- Menu tabs -->
       <nav id="search-tabs" class="flex flex-col xs:flex-row gap-4 items-start">
-        <p class="toggle-t toggle-a md:p-2 text-purple font-bold">General</p>
-        <button
-          onclick="
-          document.querySelectorAll('.toggle-t').forEach(
-            e => e.classList.add('hidden')
-          );
-          document.querySelectorAll('.group-a').forEach(
-            e => e.classList.remove('hidden')
-          );
-          document.querySelector('.toggle-a').classList.remove('hidden');
-          document.querySelector('.toggle-e').classList.remove('hidden');
-          document.querySelector('.toggle-f').classList.remove('hidden');
-          "
-          class="toggle-t toggle-d hidden md:p-2 hover:text-purple transition-colors tracking-wide">General</button>
-        <p class="toggle-t toggle-b hidden md:p-2 text-purple font-bold">Payments and Plans</p>
-        <button 
-          onclick="
-          document.querySelectorAll('.toggle-t').forEach(
-            e => e.classList.add('hidden')
-          );
-          document.querySelectorAll('.group-b').forEach(
-            e => e.classList.remove('hidden')
-          );
-          document.querySelector('.toggle-d').classList.remove('hidden');
-          document.querySelector('.toggle-b').classList.remove('hidden');
-          document.querySelector('.toggle-f').classList.remove('hidden');
-          "
-          class="toggle-t toggle-e md:p-2 hover:text-purple transition-colors tracking-wide">Payments and Plans</button>
-        <p class="toggle-t toggle-c hidden md:p-2 text-purple font-bold">Beta</p>
-        <button
-          onclick="
-          document.querySelectorAll('.toggle-t').forEach(
-            e => e.classList.add('hidden')
-          );
-          document.querySelectorAll('.group-c').forEach(
-            e => e.classList.remove('hidden')
-          );
-          document.querySelector('.toggle-d').classList.remove('hidden');
-          document.querySelector('.toggle-e').classList.remove('hidden');
-          document.querySelector('.toggle-c').classList.remove('hidden');
-          "
-          class="toggle-t toggle-f md:p-2 hover:text-purple transition-colors tracking-wide">Beta</button>
       </nav>
       <!-- Questions -->
-      <div class="toggle-t group-a item-a flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-a)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-a)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-a').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>Why does my file take a while to load?</p>
-          <img class="open open-toggle open-a" src="../assets/arrow-down.svg">
-          <img class="open open-a hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-a hidden md:px-2 py-2">Every file you load must be read and processed by the Minionbot. The speed of its availability will depend on the size and complexity of the file.</p>
-      </div>
-      <div class="toggle-t group-a item-b flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-        document.querySelectorAll('.open:not(.open-b)').forEach(
-          e => e.classList.add('hidden')
-        )
-        document.querySelectorAll('.open-toggle:not(.open-b)').forEach(
-          e => e.classList.remove('hidden')
-        )
-        document.querySelectorAll('.open-b').forEach(
-          e => e.classList.toggle('hidden')
-        )
-      " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>What happens if I run out of allotted questions to the Minionbot?</p>
-          <img class="open open-toggle open-b" src="../assets/arrow-down.svg">
-          <img class="open open-b hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-b hidden md:px-2 py-2">Your monthly maximum allotted questions will reset to Zero on the first of every month. In the event that you exceed your maximum amount of questions within a calendar month you will have the following options: If you are using a Premium account, you will be prompted to upgrade to the Professional account. You may toggle back to the Premium account the following month.</p>
-      </div>
-      <div class="toggle-t group-a item-c flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-        document.querySelectorAll('.open:not(.open-c)').forEach(
-          e => e.classList.add('hidden')
-        )
-        document.querySelectorAll('.open-toggle:not(.open-c)').forEach(
-          e => e.classList.remove('hidden')
-        )
-        document.querySelectorAll('.open-c').forEach(
-          e => e.classList.toggle('hidden')
-        )
-      " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>What file formats are supported?</p>
-          <img class="open open-toggle open-c" src="../assets/arrow-down.svg">
-          <img class="open open-c hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-c hidden md:px-2 py-2">Currently, PDF and Microsoft Word file formats are supported. DATAMINION engineers will be adding other file formats in the future.</p>
-      </div>
-      <div class="toggle-t group-a item-d flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-d)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-d)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-d').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>My file is too big for the Minionbot. What can I do?</p>
-          <img class="open open-toggle open-d" src="../assets/arrow-down.svg">
-          <img class="open open-d hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-d hidden md:px-2 py-2">The Minionbot may have issues processing files that are densely packed with content. For example, if a college textbook is not loading properly, save as respective chapters as PDFs and load them individually.</p>
-      </div>
-      <div class="toggle-t group-a item-e flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-e)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-e)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-e').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>When will new features be available?</p>
-          <img class="open open-toggle open-e" src="../assets/arrow-down.svg">
-          <img class="open open-e hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-e hidden md:px-2 py-2">We are constantly developing new features. They will generally be implemented on a monthly basis.</p>
-      </div>
-      <div class="toggle-t group-a item-f flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-f)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-f)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-f').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>How do I delete a file I have uploaded?</p>
-          <img class="open open-toggle open-f" src="../assets/arrow-down.svg">
-          <img class="open open-f hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-f hidden md:px-2 py-2">While viewing in Grid mode: Click on the file. Click on the three dots at the top right of the file. Click remove. While viewing in List mode: Click on the three dots at the right of the file. Click remove.</p>
-      </div>
-      <div class="toggle-t group-a item-g flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-g)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-g)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-g').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>Can I load more documents after I have uploaded the maximum amount of documents in my tier?</p>
-          <img class="open open-toggle open-g" src="../assets/arrow-down.svg">
-          <img class="open open-g hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-g hidden md:px-2 py-2">Yes. Your maximum document uploads quota has to do with storage space. If you need to load more files, remove older files that you are not using to free up space.</p>
-      </div>
-      <div class="toggle-t group-a item-h flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-h)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-h)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-h').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>Why is there a limited amount of questions per month?</p>
-          <img class="open open-toggle open-h" src="../assets/arrow-down.svg">
-          <img class="open open-h hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-h hidden md:px-2 py-2">The language model has a finite amount of questions allotted per user. We expect this question limit to increase in the future and eventually become irrelevant to humans.</p>
-      </div>
-      <div class="toggle-t group-b item-i hidden flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-i)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-i)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-i').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>Is there a business plan available for my small business/ corporation?</p>
-          <img class="open open-toggle open-i" src="../assets/arrow-down.svg">
-          <img class="open open-i hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-i hidden md:px-2 py-2">The Minionbot is evolving quickly. It will be available as a business plan in the future. In the meantime, we request that you use individual accounts.</p>
-      </div>
-      <div class="toggle-t group-c item-j hidden flex flex-1 flex-col py-4 text-lg font-medium border-b border-slate">
-        <div onClick="
-          document.querySelectorAll('.open:not(.open-j)').forEach(
-            e => e.classList.add('hidden')
-          )
-          document.querySelectorAll('.open-toggle:not(.open-j)').forEach(
-            e => e.classList.remove('hidden')
-          )
-          document.querySelectorAll('.open-j').forEach(
-            e => e.classList.toggle('hidden')
-          )
-        " class="flex justify-between py-4 md:px-2 cursor-pointer">
-          <p>What is an “Operational Beta”?</p>
-          <img class="open open-toggle open-j" src="../assets/arrow-down.svg">
-          <img class="open open-j hidden" src="../assets/arrow-up.svg">
-        </div>
-        <p class="open open-j hidden md:px-2 py-2">In the tech world, a Beta is a software that is ready for external testing but has limitations in comparison to the final release. Although our Minionbot can use a little more time in the oven, it is functional. We at DATAMINION have chosen to make the beta version of the Minionbot available to students while it is on its last stages of development. This will allow our small startup company to finish adjusting Minionbot in the real world. All proceeds from the beta go to improving your experience with the Minionbot and feeding our little team of cranky humans.</p>
-      </div>
     </div>
     <div class="flex flex-col justify-center gap-2 items-center w-full h-[5rem] p-4">
       <p class="text-center text-xs sm:text-base">Copyright © 2024 DATAMINION. All rights reserved.</p>
