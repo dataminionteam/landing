@@ -15,6 +15,16 @@
         font-family: "Public Sans";
       }
     </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "3PnIzXbhraBGjJ6Z7",
+        });
+      })();
+    </script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div id="root">
@@ -340,6 +350,7 @@
           </div>
         </div>
         <form
+          id="contact-form"
           class="flex flex-col justify-center w-full h-[calc(100vh-5rem)] gap-4 py-6 px-12 bg-lightSlate overflow-auto"
         >
           <p class="text-2xl sm:text-3xl font-black">Get In Touch</p>
@@ -387,14 +398,13 @@
               required=""
             ></textarea>
           </div>
-          <button
+          <input
             type="submit"
-            value="Send"
-            class="h-10 w-1/2 max-w-[360px] text-center text-white rounded-md bg-purple hover:bg-purpleDark transition-colors"
+            value="Submit"
+            class="cursor-pointer h-10 w-1/2 max-w-[360px] text-center text-white rounded-md bg-purple hover:bg-purpleDark transition-colors"
           >
-            Submit
-          </button>
-          <p class="h-8 min-h-8"></p>
+          </input>
+          <p id="form-text" class="h-8 min-h-8"></p>
         </form>
       </div>
       <div
