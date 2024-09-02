@@ -10,7 +10,7 @@ groups = [
     id: "b",
   },
   {
-    name: "Account",
+    name: "Beta",
     id: "c",
   },
 ];
@@ -63,19 +63,9 @@ const questions = [
     group: "b",
   },
   {
-    q: "How do I edit my Password”?",
-    a: "There are two ways to reset your Password. From the Login, you can select Forgot your password and an option to reset your password will be emailed you your contact on file. The other option is to go the Account page and select Profile.Then, select the edit icon next to Personal Info. There, you may edit your current password.",
+    q: "What is an “Operational Beta”?",
+    a: "In the tech world, a Beta is a software that is ready for external testing but has limitations in comparison to the final release. Although our Minionbot can use a little more time in the oven, it is functional. We at DATAMINION have chosen to make the beta version of the Minionbot available to students while it is on its last stages of development. This will allow our small startup company to finish adjusting Minionbot in the real world. All proceeds from the beta go to improving your experience with the Minionbot and feeding our little team of cranky humans.",
     group: "c",
-  },
-  {
-    q: "Why is Billing and external link?”?",
-    a: "DATAMINION uses Stripe (Stripe.com) to manage all transactions. This optimizes the security of your financial data.",
-    group: "c",
-  },
-  {
-    q: "How do I cancel my monthly subscription",
-    a: "Log into DATAMINION. Go to your Account page. Select Billing. This will take you to your Plan manager. Choose Cancel Plan. *Note: If you are using Safari as a browser, you may have to select the pop up icon in the URL/ Search bar. ",
-    group: "b",
   },
 ];
 
