@@ -10,7 +10,7 @@ groups = [
     id: "b",
   },
   {
-    name: "Beta",
+    name: "Account",
     id: "c",
   },
 ];
