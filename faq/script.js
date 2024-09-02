@@ -64,7 +64,7 @@ const questions = [
   },
   {
     q: "How do I edit my Password”?",
-    a: "There are two ways to reset your Password. From the Login, you can select "Forgot your password" and an option to reset your password will be emailed you your contact on file. The other option is to go the Account page and select Profile.Then, select the edit icon next to Personal Info. There, you may edit your current password.,
+    a: "There are two ways to reset your Password. From the Login, you can select Forgot your password and an option to reset your password will be emailed you your contact on file. The other option is to go the Account page and select Profile.Then, select the edit icon next to Personal Info. There, you may edit your current password.",
     group: "c",
   },
   {
