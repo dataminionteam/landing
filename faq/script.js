@@ -67,6 +67,11 @@ const questions = [
     a: "In the tech world, a Beta is a software that is ready for external testing but has limitations in comparison to the final release. Although our Minionbot can use a little more time in the oven, it is functional. We at DATAMINION have chosen to make the beta version of the Minionbot available to students while it is on its last stages of development. This will allow our small startup company to finish adjusting Minionbot in the real world. All proceeds from the beta go to improving your experience with the Minionbot and feeding our little team of cranky humans.",
     group: "c",
   },
+  {
+    q: "What is an “Operational Beta”?",
+    a: "In the tech world, a Beta is a software that is ready for external testing but has limitations in comparison to the final release. Although our Minionbot can use a little more time in the oven, it is functional. We at DATAMINION have chosen to make the beta version of the Minionbot available to students while it is on its last stages of development. This will allow our small startup company to finish adjusting Minionbot in the real world. All proceeds from the beta go to improving your experience with the Minionbot and feeding our little team of cranky humans.",
+    group: "c",
+  },
 ];
 
 // Render group tabs
